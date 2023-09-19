@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>calculator</title>
+
+    <link rel="stylesheet" href="calci.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+   
+</head>
+<body>
+    <form name="calculate">
+    <div id="calculator">
+        <!-- <div id="display" class="input" >0</div> -->
+        <div id="display" class="input" >
+        <input type="text"  name="result" placeholder="0" maxlength="10"></input></div>
+        <div class="line">
+        <button type="button" class="gray-bg button" onclick="cle(value)">AC</button>
+        <button type="button" class="gray-bg button" onclick="number(value)">+/-</button>
+        <button type="button" class="gray-bg button" onclick="number(value)" value="%">%</button>
+        <button type="button" class="yellow-bg button" onclick="number(value)" value="/">/</button>
+    </div>
+
+        <div class="line">
+            <button type="button" class="dark-gray-bg button" onclick="number(value)" value="7">7</button>
+            <button type="button" class="dark-gray-bg button" onclick="number(value)" value="8">8</button>
+            <button class="dark-gray-bg button" type="button" onclick="number(value)" value="9">9</button>
+            <button type="button" class="yellow-bg button" onclick="number(value)" value="*">*</button>
+        </div>
+
+        
+        <div class="line">
+            <button type="button" class="dark-gray-bg button" onclick="number(value)" value="4">4</button>
+            <button type="button" class="dark-gray-bg button" onclick="number(value)" value="5">5</button>
+            <button type="button" class="dark-gray-bg button" onclick="number(value)" value="6">6</button>
+            <button type="button" class="yellow-bg button" onclick="number(value)" value="-">-</button>
+        </div>
+
+        
+        <div class="line">
+            <button type="button" class="dark-gray-bg button" onclick="number(value)" value="1">1</button>
+            <button type="button" class="dark-gray-bg button" onclick="number(value)" value="2">2</button>
+            <button type="button" class="dark-gray-bg button" onclick="number(value)" value="3">3</button>
+            <button type="button" class="yellow-bg button" onclick="number(value)" value="+">+</button>
+        </div>
+        
+        <div class="line">
+            <button type="button" class="dark-gray-bg button" onclick="number(value)" value="0">0</button>
+            <button type="button" class="dark-gray-bg button" onclick="number(value)" value=".">.</button>
+            <button type="button" class="yellow-bg button" onclick="evalua()" value="=">=</button>
+        </div>        
+    </div>
+</form>
+    <!-- <script src="calci.js"></script> -->
+    
+    <script>
+        function number(value) {
+            document.calculate.result.value += value;
+        }
+        function cle(value) {
+            document.calculate.result.value = value;
+        }
+        function evalua() {
+            document.calculate.result.value = eval(document.calculate.result.value);
+        }
+    </script>
+</body>
+</html>
